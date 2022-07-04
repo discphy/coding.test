@@ -146,4 +146,55 @@ public class Class2 {
 
         System.out.println(sum % m);
     }
+
+    public void _1259() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String input;
+
+        while (!(input = reader.readLine()).equals("0")) {
+            StringBuffer buffer = new StringBuffer();
+            char[] chars = input.toCharArray();
+
+            for (int a = chars.length; a > 0; a--) buffer.append(chars[a - 1]);
+
+            System.out.println(buffer.toString().equals(input) ? "yes" : "no");
+        }
+    }
+
+    public static void _2609() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String[] input = reader.readLine().trim().split(" ");
+
+        int a = Integer.parseInt(input[0]), b = Integer.parseInt(input[1]);
+        int result = a > b ? gcd(a, b) : gcd(b, a);
+
+        System.out.println(result);
+        System.out.println(a * b / result);
+    }
+
+    public static int gcd(int a, int b) {
+        if (a % b == 0) return b;
+
+        return gcd(b, a % b);
+    }
+
+    public void _2775() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int testCase = Integer.parseInt(reader.readLine());
+
+        for (int a = 0; a < testCase; a++) {
+            int floor = Integer.parseInt(reader.readLine()) + 1;
+            int ho = Integer.parseInt(reader.readLine()) + 1;
+
+            int apt[][] = new int[floor][ho];
+
+            for (int k = 0; k < floor; k++) {
+                for (int n = 1; n < ho; n++) {
+                    apt[k][n] = k != 0 ? apt[k - 1][n] + apt[k][n - 1] : n;
+                }
+            }
+
+            System.out.println(apt[floor - 1][ho - 1]);
+        }
+    }
 }
