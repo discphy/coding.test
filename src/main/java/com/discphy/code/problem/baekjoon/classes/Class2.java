@@ -197,4 +197,38 @@ public class Class2 {
             System.out.println(apt[floor - 1][ho - 1]);
         }
     }
+
+    public void _10989() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int testCase = Integer.parseInt(reader.readLine());
+        StringBuffer buffer = new StringBuffer();
+
+        int[] arr = new int[100001];
+
+        for (int a = 0; a < testCase; a++) arr[Integer.parseInt(reader.readLine())]++;
+
+        for (int a = 0; a < arr.length; a++) {
+            while (arr[a] > 0) {
+                buffer.append(a + "\n");
+                arr[a]--;
+            }
+        }
+
+        System.out.println(buffer.toString());
+    }
+
+    public void _11050() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String[] input = reader.readLine().trim().split(" ");
+
+        int n = Integer.parseInt(input[0]), k = Integer.parseInt(input[1]);
+
+        System.out.println(factorial(n) / (factorial(n - k)  * factorial(k)));
+    }
+
+    public static int factorial(int a) {
+        if (a <= 1) return 1;
+
+        return a * factorial(a - 1);
+    }
 }
