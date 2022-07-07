@@ -3,6 +3,10 @@ package com.discphy.code.problem.baekjoon.classes;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class Class2 {
     public void _1085() throws IOException {
@@ -230,5 +234,24 @@ public class Class2 {
         if (a <= 1) return 1;
 
         return a * factorial(a - 1);
+    }
+
+    public void _1181() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int testCount = Integer.parseInt(reader.readLine().trim());
+        List<String> list = new ArrayList<>();
+
+
+        for (int a = 0; a < testCount; a++) {
+            String input = reader.readLine().trim();
+
+            if (!list.contains(input)) list.add(input);
+        }
+
+        Collections.sort(list);
+
+        list.sort(Comparator.comparingInt(String::length));
+
+        for (String value : list) System.out.println(value);
     }
 }
