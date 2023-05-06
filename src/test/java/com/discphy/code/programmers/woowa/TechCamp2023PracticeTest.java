@@ -12,7 +12,7 @@ import static java.util.Arrays.stream;
 import static java.util.stream.Collectors.toList;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class TechCamp2023Test {
+public class TechCamp2023PracticeTest {
 
     @Test
     void solution1TestCase1() {
