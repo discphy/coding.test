@@ -19,7 +19,6 @@ configurations {
 }
 
 repositories {
-	maven { url 'https://repo.spring.io/release' }
 	mavenCentral()
 }
 
